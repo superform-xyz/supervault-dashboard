@@ -1,0 +1,198 @@
+/* ==========================================================================
+   SuperVault Dashboard - Custom Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS Variables
+   ========================================================================== */
+:root {
+    /* Brand colors */
+    --color-primary: #254544;
+    --color-primary-dark: #1d3635;
+    
+    /* UI colors */
+    --color-bg: #f8f9fa;
+    --color-border: #dee2e6;
+    --color-border-light: rgba(0, 0, 0, 0.05);
+    --color-text: #212529;
+    --color-text-muted: #6c757d;
+    --color-link-hover: #0d6efd;
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   2. Base Styles
+   ========================================================================== */
+@font-face {
+    font-family: 'LabGrotesqueMono';
+    src: url('fonts/LabGrotesqueMono-Regular.woff2') format('woff2'),
+         url('fonts/LabGrotesqueMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'LabGrotesqueMono', 'Inter', 'Segoe UI', 'Roboto', monospace;
+    background-color: var(--color-bg);
+}
+
+/* ==========================================================================
+   3. Navbar
+   ========================================================================== */
+.navbar.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   4. Cards
+   ========================================================================== */
+.card {
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.card-header {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+/* ==========================================================================
+   5. Buttons
+   ========================================================================== */
+.btn-header-green {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.btn-header-green:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: white;
+}
+
+.btn-header-green:active,
+.btn-header-green:focus {
+    background-color: var(--color-primary-dark) !important;
+    border-color: var(--color-primary-dark) !important;
+    color: white !important;
+}
+
+/* ==========================================================================
+   6. Tabs
+   ========================================================================== */
+.nav-tabs .nav-link {
+    color: var(--color-primary);
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--color-primary-dark);
+    border: none;
+    background-color: rgba(37, 69, 68, 0.1);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* ==========================================================================
+   7. Form Inputs
+   ========================================================================== */
+#block-number-input {
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#block-number-input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ==========================================================================
+   8. Address Links
+   ========================================================================== */
+.address-link {
+    cursor: pointer;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    text-decoration: none;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    display: block;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.address-link:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    color: var(--color-link-hover);
+    text-decoration: none;
+}
+
+.address-link:visited {
+    color: var(--color-text);
+}
+
+.address-link:hover:visited {
+    color: var(--color-link-hover);
+}
+
+/* ==========================================================================
+   9. Tables
+   ========================================================================== */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* ==========================================================================
+   10. Plotly Overrides
+   ========================================================================== */
+.js-plotly-plot .plotly .modebar {
+    opacity: 0.2;
+}
+
+.js-plotly-plot .plotly .modebar:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   11. Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+}
